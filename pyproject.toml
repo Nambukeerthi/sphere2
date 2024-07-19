@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+[project]
+requires-python = ">= 3.8"
+name = "sphere"
+authors = [
+  {name = "keerthi", email = "nambu935@gmail.com"},  
+]
+description = "volume calculation"
+readme = "README.md"
+[project]
+license = {text = "MIT License"}
