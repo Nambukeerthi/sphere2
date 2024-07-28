@@ -1,0 +1,49 @@
+anaconda navigater> vscode lanch> create virtual enviroinment> 
+
+python install > python extention for .py file
+
+jupiter kernal for .ipynb file
+
+google api install
+
+streamlit install >> pip install streamlit
+google api install>> pip install google-api-python-client
+mysql connecter install>> pip install mysql-connector-python
+
+
+import streamlit as st
+
+st.title('My First Streamlit App')
+st.write("Hello, world!")
+ 
+from tkinter import YES
+from PIL import Image
+from sqlalchemy import create_engine
+import tkinter
+
+ st.subheader("",)
+          img = Image.open("youtube_project.jpeg")
+          st.image( img, caption= "Method of process",use_column_width=True,channels="RGB"
+ 
+
+https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/                  )
+
+
+vscode terminal issue>> not open>> 
+
+1. check v1.0 (vscode) file in >> local disc'C' >windows>system 32> windows powershell
+2. settings> terminal.integrated.default profile.windows>(select)command prompt>save
+3. code-runner:run in terminal>(select) tick box
+4. https://www.youtube.com/watch?v=9YiFG2AeMMk
+
+
+ection = mysql.connector.connect(
+      host="youtubedb.c96m2ysgag7t.eu-north-1.rds.amazonaws.com",
+      user="admin",
+      password="nambukeerthi",
+      database="youtubedb",
+      port= "3306"
+     )    
+
+pip3 list
+pip3 freeze > requirements.txt

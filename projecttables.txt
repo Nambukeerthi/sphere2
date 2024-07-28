@@ -1,0 +1,134 @@
+
+
+UCD7AAHKCDkcY7C593EQg8Bw
+UCVFLegjgN97k4AkyX6nHAOQ
+UCXhbCCZAG4GlaBLm80ZL-iA
+UCgLFJc-uJMP-wPZ4LZgnsIQ
+UC9Wq1_eFlTE9XBdvxb3lVFg
+UCuXB-7IeKmbIDBzCiUtNFyQ
+UCoj9VSurXdwfAwoz6eRJfGw
+UCUAhIqes6C2_bmrTV4Arc9g
+UCQvybEosEgV-MIREJObXMDw
+UCGJC6JbaIx5ib_uDCdBJoJQ
+
+-----------------------------------------------------------------------------
+channel 
+id VARCHAR(50) unique,  
+name VARCHAR(40),
+views INT,
+videoscount INT,
+subscriptioncount INT,
+discribtion VARCHAR(100), 
+
+
+playlist (ok)
+playlistid VARCHAR(50) unique  
+channelid VARCHAR(40),
+playlistname VARCHAR(50),
+FOREIGN KEY(channelid) REFERENCES channel(id)
+
+videos (ok)
+id VARCHAR(50) unique,  
+videoname VARCHAR(100),
+publisheddate DATE,
+views INT,
+likes INT,
+cannelid VARCHAR
+
+FOREIGN KEY(listid) REFERENCES playlist(playlistid)
+
+comments
+commentid VARCHAR(50)unique,  
+videosid VARCHAR(50),
+text VARCHAR(200), 
+FOREIGN KEY(videosid) REFERENCES videos(id)
+---------------------------------------------------------------------------------------
+"What are the names of all the videos and their corresponding channels?",
+        "Which channels have the most number of videos, and how many videos do they have?",
+        "What are the top 10 most viewed videos and their respective channels?",
+        "How many comments were made on each video, and what are their corresponding video names?",
+        "Which videos have the highest number of likes, and what are their corresponding channel names?",
+        "What is the total number of views for each channel, and what are their corresponding channel names?",
+        "What are the names of all the channels that have published videos in the year 2022?",
+        "Which videos have the highest number of comments, and what are their corresponding channel names?"
+
+data base
+CREATE DATABASE practice DEFAULT CHARSET = utf8mb4 DEFAULT COLLATE = utf8mb4_unicode_ci;
+
+1. What are the names of all the videos and their corresponding channels?
+
+SELECT c.name,v.videoname FROM channel c JOIN videos v ON c.id=v.channelid;
+
+2. Which channels have the most number of videos, and how many videos do
+they have?
+
+SELECT name,videoscount FROM channel ORDER BY videoscount DESC LIMIT 10;
+
+3. What are the top 10 most viewed videos and their respective channels?
+
+SELECT c.name,v.videoname,v.views FROM CHANNEL C LEFT JOIN videos v ON v.channelid=c.id ORDER BY v.views DESC LIMIT 10;
+
+4. How many comments were made on each video, and what are their
+corresponding video names?
+
+SELECT v.videoname,v.commentcount,c.text FROM videos v LEFT JOIN comments c ON v.id=c.videosid ORDER BY v.commentcount DESC LIMIT 10; 
+
+5. Which videos have the highest number of likes, and what are their
+corresponding channel names?
+
+SELECT c.name,v.likes FROM channel c LEFT JOIN videos v on c.id=v.channelid ORDER BY v.likes DESC LIMIT 10;
+
+6. What is the total number of likes and dislikes for each video, and what are
+their corresponding video names?
+
+SELECT c.name,v.videoname,v.likes FROM channel c LEFT JOIN videos v on c.id=v.channelid ORDER BY v.likes DESC LIMIT 10;
+
+7. What is the total number of views for each channel, and what are their
+corresponding channel names?
+
+SELECT name,views FROM channel ORDER BY views DESC;
+
+8. What are the names of all the channels that have published videos in the year
+2024?
+SELECT c.name,v.videoname,v.publisheddate FROM channel c right JOIN videos v ON c.id=v.channelid WHERE YEAR(publisheddate)=2024;
+
+9. What is the average duration of all videos in each channel, and what are their
+corresponding channel names?
+
+
+10.Which videos have the highest number of comments, and what are their
+corresponding channel names?
+
+
+SELECT v.videoname,v.commentcount,c.text FROM videos v LEFT JOIN comments c ON v.id=c.videosid ORDER BY COUNT(v.commentcount) DESC;
+
+
+---------------------------------------------------------
+1.videos corresponding channels
+2.mostt views videos and their how many videos
+3.top 10 viwes videos and channels
+4.how many comments and video names
+5.higest likes and their channels 
+6.
+7.total views and channel names
+8.2022 publishedvideos in channelname 
+9.
+10. highest comment and their channels
+------------------------------------------------------
+from PIL import Image
+import streamlit as st
+
+def main():
+    st.title('Display Image Example')
+    
+    # Open an image file
+    img_path = "youtube_project.jpeg"
+    img = Image.open(img_path)
+    
+    # Display the image using Streamlit
+    st.image(img, caption='YouTube Project Image', use_column_width=True)
+
+if __name__ == "__main__":
+    main()
+
+

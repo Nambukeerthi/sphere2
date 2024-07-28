@@ -1,0 +1,47 @@
+git clone http://github.com/hareesh/samplerepo.git
+git config --global user.name "Nambukeerthi"
+git config --global user.email "nambu935@gmail.com"
+cd .\samplerepo
+git add. \samplerepo
+
+git push orgin main
+
+CREATE COMMEND LINE
+git init
+git add README.md
+git commit -M main
+git remote add orgin http://github.com/hareesh/samplerepo.git
+git push -u orgin main
+
+PUSH COMMEND LINE
+git remote add orgin http://github.com/hareesh/samplerepo.git 
+git branch -M main
+git push -u orgin main
+
+IMPORT CODE 
+git pull
+git diff
+
+
+
+unstaged - git add
+staged   - after git add
+ready for push - after git commit
+remote repo- after git push
+
+staged to unstaged - git reset
+
+BRANCH
+git branch
+git checkout -b "frontend"  (branch ceration)
+git checout main
+git checkout frontend
+git push orgin frontend
+
+MERGING ALL BRANCHS TO MAIN
+git pull requests
+
+
+
+
+ 
